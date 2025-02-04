@@ -11,6 +11,8 @@ public:
     int cellSize;
     void Print();
     void Draw();
+    bool IsTileOutside(int row, int column);
+
 private:
     int numRows;
     int numCols;
