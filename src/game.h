@@ -18,6 +18,9 @@ public:
     Grid grid;
 
 private:
+    void RotateBlock();
+    void LockBlock();
+    bool BlockFits();
     Block currentBlock;
     Block nextBlock;
     std::vector<Block> blocks;
