@@ -42,7 +42,7 @@ void Grid::Draw()
         for (int column = 0; column < numCols; column++)
         {
             int cellValue = grid[row][column];
-            DrawRectangle(column * cellSize + 1, row * cellSize + 1, cellSize - 1, cellSize - 1, colors[cellValue]);
+            DrawRectangle(column * cellSize + 11, row * cellSize + 11, cellSize - 1, cellSize - 1, colors[cellValue]);
         }
     }
 }
@@ -61,7 +61,7 @@ bool Grid::IsCellEmpty(int row, int column)
     return grid[row][column] == 0;
 }
 
-void Grid::ClearFullRows()
+int Grid::ClearFullRows()
 {
     int completed = 0;
     for (int row = numRows - 1; row >= 0; row--)
@@ -76,6 +76,7 @@ void Grid::ClearFullRows()
             MoveRowDown(row, completed);
         }
     }
+    return completed;
 }
 
 bool Grid::IsRowFull(int row)
